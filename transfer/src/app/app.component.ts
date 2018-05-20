@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  addr = 'New address';
-  balance ='1002937.90$';
+  title = 'your first DApp in Angular';
+  transferFrom = '0x08239087848932748932';
+  balance ='37.9 ETH';
   transferTo='';
   amount=0;
   remarks='';
