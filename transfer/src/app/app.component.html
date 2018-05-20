@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Angular DApp!
+  </h1>
+</div>
+<form>
+  <div class="container">
+  <div class="tab"><b> Address</b>{{addr}} <span class="tab-right"><b>Balance</b>{{balance}}</span></div>
+    <hr>
+
+    <label for="transfer"><b>Tranfer To</b></label>
+    <input type="text" class="inputfield" placeholder="Tranfer To"  [(ngModel)]="tranferTo" name="tranferTo" required>
+
+    <label for="amount"><b>Amount in Ether</b></label>
+    <input type="text"  class="inputfield" placeholder="Enter Amount"  [(ngModel)]="amount" name="amount" required>
+
+    <label for="remarts"><b>Remarks</b></label>
+    <textarea  class="inputfield" placeholder="Enter Remarks" name="remarks" required   [(ngModel)]="remarks" ></textarea>
+    <hr>
+    <button type="reset" class="trfbtn resetbtn">Reset</button>&nbsp;&nbsp;
+    <button type="submit" class="trfbtn" (click)="transferEther($event)">Transfer Ether</button>&nbsp;&nbsp;
+  </div>
+
+</form>
