@@ -8,10 +8,14 @@ contract Payment {
     transferFrom = msg.sender;
   }
 
+  event TransferFund(address _transferTo, address _transferFrom, uint amount);
+
   function transferFund( address _transferTo ) public payable returns (bool){
       transferTo = _transferTo;
 
       transferTo.transfer(msg.value);
+
+      emit TransferFund(transferTo, transferFrom, msg.value);
 
       return true;
   }
