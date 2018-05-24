@@ -16,13 +16,12 @@ export class AppComponent implements ngOnInit {
   remarks='';
 
   constructor( private ethcontractService: EthcontractService ){
-    this.initContract();
+    this.initAndDisplayAccount();
   }
 
-  initContract = () => {
+  initAndDisplayAccount = () => {
     let that = this;
     this.ethcontractService.getAccountInfo().then(function(acctInfo){
-      console.log(acctInfo);
       that.transferFrom = acctInfo.fromAccount;
       that.balance = acctInfo.balance;
     }).catch(function(error){
@@ -40,10 +39,10 @@ export class AppComponent implements ngOnInit {
       this.amount,
       this.remarks
     ).then(function(){
-      that.initContract();
+      that.initAndDisplayAccount();
     }).catch(function(error){
       console.log(error);
-      that.initContract();
+      that.initAndDisplayAccount();
     });
   }
 }
