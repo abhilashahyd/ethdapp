@@ -1,4 +1,4 @@
-This is an application to enable blockchain enthusiast to get started with Distributed Applications in Angular.
+This is an application to enable blockchain enthusiasts to get started with Distributed Applications in Angular.
 
 The steps to get started:
 
@@ -13,7 +13,7 @@ Once installed and launched it shows up the blocks with address as below
 
 > cd transfer
 
-> npm Install
+> npm install
 
 > ng serve --open
 
