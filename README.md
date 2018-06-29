@@ -12,9 +12,13 @@ Once installed and launched it shows up the blocks with address as below
 2. The angular application resides in the transfer folder.
 
 > cd transfer
+
 > npm Install
+
 > ng serve --open
 
 
-This should launch your angular application showing the account details
+This should launch your angular application showing the ganache account details
 ![ETHDAPP](https://github.com/abhilashahyd/ethdapp/blob/master/transfer/src/assets/ethdapp.PNG)
+
+You can get started with the transfer!
