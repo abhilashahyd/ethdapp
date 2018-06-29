@@ -22,6 +22,7 @@
     "@angular/router": "^6.0.0",
     "buffer": "^5.1.0",
     "core-js": "^2.5.4",
+    "node-gyp": "^3.6.2",
     "rxjs": "^6.0.0",
     "stream": "0.0.2",
     "truffle-contract": "^3.0.5",
