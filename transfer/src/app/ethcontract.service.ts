@@ -12,15 +12,15 @@ let tokenAbi = require('../../../build/contracts/Payment.json');
 })
 
 export class EthcontractService {
-  private web3Provider: null,
-  private contracts: {},
+  private web3Provider: null;
+  private contracts: {};
 
 
   constructor() {
     if (typeof window.web3 !== 'undefined') {
       this.web3Provider = window.web3.currentProvider;
     } else {
-      this.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
+      this.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
     }
 
     window.web3 = new Web3(this.web3Provider);
@@ -31,11 +31,11 @@ export class EthcontractService {
       window.web3.eth.getCoinbase(function(err, account) {
 
         if(err === null) {
-          web3.eth.getBalance(account, function(err, balance) {
+          window.web3.eth.getBalance(account, function(err, balance) {
             if(err === null) {
-              return resolve({fromAccount: account, balance:web3.fromWei(balance, "ether")});
+              return resolve({fromAccount: account, balance:(window.web3.fromWei(balance, "ether")).toNumber()});
             } else {
-              return reject("error!");
+              return reject({fromAccount: "error", balance:0});
             }
           });
         }
@@ -60,7 +60,7 @@ export class EthcontractService {
             _transferTo,
             {
               from:_transferFrom,
-              value:web3.toWei(_amount, "ether")
+              value:window.web3.toWei(_amount, "ether")
             });
         }).then(function(status) {
           if(status) {

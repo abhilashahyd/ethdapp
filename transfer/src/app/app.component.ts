@@ -6,7 +6,7 @@ import { EthcontractService } from './ethcontract.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements ngOnInit {
+export class AppComponent {
   title = 'your first DApp in Angular';
   accounts:any;
   transferFrom = '0x0';
@@ -21,7 +21,8 @@ export class AppComponent implements ngOnInit {
 
   initAndDisplayAccount = () => {
     let that = this;
-    this.ethcontractService.getAccountInfo().then(function(acctInfo){
+    this.ethcontractService.getAccountInfo().then(function(acctInfo : any){
+      console.log(acctInfo);
       that.transferFrom = acctInfo.fromAccount;
       that.balance = acctInfo.balance;
     }).catch(function(error){
@@ -32,7 +33,7 @@ export class AppComponent implements ngOnInit {
 
   transferEther(event){
     let that = this;
-
+console.log(this.transferTo);
     this.ethcontractService.transferEther(
       this.transferFrom,
       this.transferTo,
