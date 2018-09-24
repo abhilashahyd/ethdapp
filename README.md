@@ -9,6 +9,12 @@ https://truffleframework.com/ganache
 Once installed and launched it shows up the blocks with address as below
 ![Ganache](https://github.com/abhilashahyd/ethdapp/blob/master/transfer/src/assets/Ganache.PNG)
 
+2. Compile the truffle contracts using below command.
+
+````
+truffle migrate --reset --network ganache --compile-all
+````
+
 2. The angular application resides in the transfer folder.
 
 > cd transfer
